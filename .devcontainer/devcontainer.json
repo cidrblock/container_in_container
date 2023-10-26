@@ -29,7 +29,11 @@
 		"--security-opt",
 		"label=disable",
 		"--cap-add=SYS_ADMIN",
-		"--cap-add=SYS_RESOURCE"
+		"--cap-add=SYS_RESOURCE",
+		"--device",
+		"/dev/fuse",
+		"--security-opt",
+		"apparmor=unconfined"
 	],
 	"updateRemoteUserUID": true,
 	"customizations": {
