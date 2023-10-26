@@ -1,11 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/alpine
 {
-	"name": "ansible-sdk",
+	"name": "ansible-sdk-docker",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "localhost/sdk:latest",
 	"build": {
-		"dockerfile": "Containerfile"
+		"dockerfile": "../Containerfile"
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
