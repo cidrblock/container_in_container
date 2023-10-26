@@ -25,7 +25,11 @@
 	// docker
 	"runArgs": [
 		"--security-opt",
-		"seccomp=unconfined"
+		"seccomp=unconfined",
+		"--security-opt",
+		"label=disable",
+		"--cap-add=SYS_ADMIN",
+		"--cap-add=SYS_RESOURCE"
 	],
 	"updateRemoteUserUID": true,
 	"customizations": {
