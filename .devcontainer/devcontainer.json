@@ -5,7 +5,7 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "localhost/sdk:latest",
 	"build": {
-		"dockerfile": "../Containerfile"
+		"dockerfile": "Containerfile"
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
