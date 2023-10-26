@@ -67,4 +67,4 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
     /usr/bin/python3.11 -m pip install ansible-cdk
 
 WORKDIR /home/podman
-ENTRYPOINT ["/usr/bin/zsh"]
+# ENTRYPOINT ["/usr/bin/zsh"]
