@@ -62,9 +62,9 @@ ENV _CONTAINERS_USERNS_CONFIGURED=""
 RUN chsh -s $(which zsh) podman
 
 USER podman
-RUN /usr/bin/python3.11 -m pip install ansible-cdk
+RUN /usr/bin/python3.12 -m pip install ansible-cdk
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-    /usr/bin/python3.11 -m pip install ansible-cdk
+    /usr/bin/python3.12 -m pip install ansible-cdk
 
 WORKDIR /home/podman
 # ENTRYPOINT ["/usr/bin/zsh"]
