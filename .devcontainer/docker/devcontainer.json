@@ -1,5 +1,5 @@
 {
-	"name": "ansible-sdk-docker",
+	"name": "ansible-dev-container-docker",
 	"build": {
 		"dockerfile": "../Containerfile"
 	},
@@ -14,7 +14,8 @@
 		"--device",
 		"/dev/fuse",
 		"--security-opt",
-		"apparmor=unconfined"
+		"apparmor=unconfined",
+		"--hostname=ansible-dev-container"
 	],
 	"updateRemoteUserUID": true,
 	"customizations": {

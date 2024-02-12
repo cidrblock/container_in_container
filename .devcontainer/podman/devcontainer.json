@@ -1,12 +1,12 @@
 {
-	"name": "ansible-sdk-podman",
+	"name": "ansible-dev-container-podman",
 	"build": {
 		"dockerfile": "../Containerfile"
 	},
 	"containerUser": "podman",
 	"runArgs": [
 		"--userns=keep-id:uid=1000,gid=1000",
-		"--hostname=ansible-sdk"
+		"--hostname=ansible-dev-container"
 	],
 	"updateRemoteUserUID": true,
 	"customizations": {
