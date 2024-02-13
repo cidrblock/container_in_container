@@ -17,7 +17,7 @@ FROM registry.fedoraproject.org/fedora:latest
 RUN dnf -y update && \
     rpm --setcaps shadow-utils 2>/dev/null && \
     dnf -y install podman fuse-overlayfs openssh-clients \
-        python3.12 python3.12-pip zsh util-linux-user which git \
+        python3.12 python3-pip zsh util-linux-user which git \
         --exclude container-selinux && \
     dnf clean all && \
     rm -rf /var/cache /var/log/dnf* /var/log/yum.*
