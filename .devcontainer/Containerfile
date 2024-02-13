@@ -17,7 +17,7 @@ FROM registry.fedoraproject.org/fedora:latest
 RUN dnf -y update && \
     rpm --setcaps shadow-utils 2>/dev/null && \
     dnf -y install podman fuse-overlayfs openssh-clients \
-        python3.12 python3-pip zsh util-linux-user which git \
+        python3.12 zsh util-linux-user which git \
         --exclude container-selinux && \
     dnf clean all && \
     rm -rf /var/cache /var/log/dnf* /var/log/yum.*
@@ -63,6 +63,7 @@ RUN chsh -s $(which zsh) podman
 
 USER podman
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
+    /usr/bin/python3.12 -m ensurepip --default-pip && \
     /usr/bin/python3.12 -m pip install ansible-dev-tools
 
 WORKDIR /home/podman
