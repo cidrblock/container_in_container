@@ -10,3 +10,7 @@ components:
       cpuRequest: 250m
       cpuLimit: 2000m
       args: ['tail', '-f', '/dev/null']
+
+events:
+  postStart:
+    - "oc-install"
