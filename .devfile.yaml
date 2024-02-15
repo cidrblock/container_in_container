@@ -1,30 +1,12 @@
-schemaVersion: 2.1.0
+schemaVersion: 2.2.2
+metadata:
+  name: container-in-container
 components:
-  - name: runtime
+  - name: tooling-container
     container:
       image: ghcr.io/cidrblock/container-in-container
-      # endpoints:
-      #   - name: http-3000
-      #     targetPort: 3000
-commands:
-  - id: shell
-    exec:
-      component: runtime
-      commandLine: /bin/zsh
-# commands:
-#   - id: install
-#     exec:
-#       commandLine: npm install
-#       component: runtime
-#       workingDir: ${PROJECT_SOURCE}
-#       group:
-#         isDefault: true
-#         kind: build
-#   - id: run
-#     exec:
-#       commandLine: node app.js
-#       component: runtime
-#       workingDir: ${PROJECT_SOURCE}
-#       group:
-#         isDefault: true
-#         kind: run
+      memoryRequest: 256M
+      memoryLimit: 6Gi
+      cpuRequest: 250m
+      cpuLimit: 2000m
+      args: ['tail', '-f', '/dev/null']
