@@ -60,8 +60,8 @@ ENV _CONTAINERS_USERNS_CONFIGURED=""
 
 ## kubectl
 RUN \
-    microdnf install -y which && \
-    microdnf clean all && \
+    dnf install -y which && \
+    dnf clean all && \
     curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin && \
