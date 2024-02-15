@@ -87,11 +87,12 @@ RUN \
 RUN chsh -s $(which zsh) podman
 
 USER podman
+WORKDIR /home/podman
+
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
     /usr/bin/python3.12 -m ensurepip --default-pip && \
     /usr/bin/python3.12 -m pip install ansible-dev-tools
 
-WORKDIR /home/podman
 
 # nodejs 18 + VSCODE_NODEJS_RUNTIME_DIR are required on ubi9 based images
 # until we fix https://github.com/eclipse/che/issues/21778
@@ -105,5 +106,7 @@ nvm install 18.18.0
 ENV VSCODE_NODEJS_RUNTIME_DIR="$HOME/.nvm/versions/node/v18.18.0/bin/"
 # ENTRYPOINT ["/usr/bin/zsh"]
 
+USER root
 # Set permissions on /etc/passwd and /home to allow arbitrary users to write
 RUN chgrp -R 0 /home && chmod -R g=u /etc/passwd /etc/group /home
+USER podman
