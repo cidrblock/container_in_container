@@ -1,0 +1,25 @@
+schemaVersion: <version>
+components:
+  - name: runtime
+    container:
+      image: ghcr.io/cidrblock/container-in-container
+      # endpoints:
+      #   - name: http-3000
+      #     targetPort: 3000
+# commands:
+#   - id: install
+#     exec:
+#       commandLine: npm install
+#       component: runtime
+#       workingDir: ${PROJECT_SOURCE}
+#       group:
+#         isDefault: true
+#         kind: build
+#   - id: run
+#     exec:
+#       commandLine: node app.js
+#       component: runtime
+#       workingDir: ${PROJECT_SOURCE}
+#       group:
+#         isDefault: true
+#         kind: run
