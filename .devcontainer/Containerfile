@@ -106,7 +106,7 @@ nvm install 18.18.0
 ENV VSCODE_NODEJS_RUNTIME_DIR="$HOME/.nvm/versions/node/v18.18.0/bin/"
 # ENTRYPOINT ["/usr/bin/zsh"]
 
-USER root
-# Set permissions on /etc/passwd and /home to allow arbitrary users to write
-RUN chgrp -R 0 /home && chmod -R g=u /etc/passwd /etc/group /home
-USER podman
+# USER root
+# # Set permissions on /etc/passwd and /home to allow arbitrary users to write
+# RUN chgrp -R 0 /home && chmod -R g=u /etc/passwd /etc/group /home
+# USER podman
